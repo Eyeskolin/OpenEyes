@@ -1,4 +1,4 @@
-package com.zpc.kolin_eyes
+package com.zpc.kolin_eyes.avtivity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity

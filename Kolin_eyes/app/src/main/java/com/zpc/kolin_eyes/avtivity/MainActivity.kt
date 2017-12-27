@@ -1,8 +1,9 @@
-package com.zpc.kolin_eyes
+package com.zpc.kolin_eyes.avtivity
 
 import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.zpc.kolin_eyes.R
 import com.zpc.kolin_eyes.fragmnet.Found
 import com.zpc.kolin_eyes.fragmnet.Home
 import com.zpc.kolin_eyes.fragmnet.Hot
@@ -19,10 +20,10 @@ class MainActivity : AppCompatActivity() {
                 .setImgSize(30F, 30F)
                 .setFontSize(12F)
                 .setChangeColor(Color.BLACK,Color.DKGRAY)
-                .addTabItem("我的",R.mipmap.home_normal,Home::class.java)
-                .addTabItem("发现",R.mipmap.find_normal,Found::class.java)
-                .addTabItem("热门",R.mipmap.hot_normal,Hot::class.java)
-                .addTabItem("我的",R.mipmap.mine_normal,My::class.java)
+                .addTabItem("首页", R.mipmap.home_normal,Home::class.java)
+                .addTabItem("发现", R.mipmap.find_normal,Found::class.java)
+                .addTabItem("热门", R.mipmap.hot_normal,Hot::class.java)
+                .addTabItem("我的", R.mipmap.mine_normal,My::class.java)
                 .isShowDivider(false)
     }
 }

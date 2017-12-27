@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.zpc.kolin_eyes.MainActivity">
+    tools:context="com.zpc.kolin_eyes.avtivity.MainActivity">
 
     <com.hjm.bottomtabbar.BottomTabBar
         android:id="@+id/btb"
