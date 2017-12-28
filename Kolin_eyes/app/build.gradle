@@ -12,7 +12,7 @@ android {
     }
     defaultConfig {
         applicationId "com.zpc.kolin_eyes"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -36,6 +36,9 @@ dependencies {
 
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
+
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.hjm:BottomTabBar:1.1.1'
@@ -49,10 +52,8 @@ dependencies {
     compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
     compile 'com.android.support:recyclerview-v7:26.0.0-alpha1'
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'cn.jzvd:jiaozivideoplayer:6.2.3'
     testCompile 'junit:junit:4.12'
-
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
 }
 repositories {
     mavenCentral()

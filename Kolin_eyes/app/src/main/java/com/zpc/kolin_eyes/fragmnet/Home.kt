@@ -22,7 +22,7 @@ class Home : BaseFragment<HomePrestener>(), HVIew {
         var list = ArrayList<ChildHomeinfo>()
         for (i in itemList!!.indices) {
 
-            if (i != 0) {
+            if (i!= 0) {
                 val itemListBean = itemList[i]
                 val data = itemListBean.data
                 val title = data!!.title
@@ -44,7 +44,7 @@ class Home : BaseFragment<HomePrestener>(), HVIew {
     }
 
     override fun initView(view: View?) {
-        home_rlv.layoutManager = LinearLayoutManager(activity)
+        home_rlv!!.layoutManager = LinearLayoutManager(activity)
     }
 
     override fun getPrestener(): HomePrestener {

@@ -2,10 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zpc.kolin_eyes">
 
-
-<uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -24,7 +23,9 @@
         <activity android:name=".avtivity.SettingActivity" />
         <activity android:name=".avtivity.CacheActivity" />
         <activity android:name=".avtivity.HostroyActivity" />
-        <activity android:name=".avtivity.FeedBackActivity"></activity>
+        <activity android:name=".avtivity.FeedBackActivity" />
+        <activity android:name=".avtivity.PlayerActivity">
+        </activity>
     </application>
 
 </manifest>
