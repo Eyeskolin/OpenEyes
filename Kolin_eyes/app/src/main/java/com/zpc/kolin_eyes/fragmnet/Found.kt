@@ -10,7 +10,7 @@ import com.zpc.kolin_eyes.R
 /**
  * Created by DELL on 2017/12/27.
  */
-class Found:Fragment() {
+class Found:Fragment()   {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view :View?=inflater?.inflate(R.layout.found_fra,container,false)
         return view
