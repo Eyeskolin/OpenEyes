@@ -1,44 +1,78 @@
 package com.zpc.kolin_eyes.bean
 
 /**
- * Created by FLOWER on 2017/12/27.
+ * Created by FLOWER on 2017/12/28.
  */
 
-data class Homeinfo(
-		val issueList: List<Issue>,
-		val nextPageUrl: String, //http://baobab.kaiyanapp.com/api/v2/feed?date=1514163600000&num=2
-		val nextPublishTime: Long, //1514422800000
-		val newestIssueType: String, //morning
-		val dialog: Any //null
-)
+class Homeinfo {
 
-data class Issue(
-		val releaseTime: Long, //1514336400000
-		val type: String, //morning
-		val date: Long, //1514336400000
-		val publishTime: Long, //1514336400000
-		val itemList: List<Item>,
-		val count: Int //6
-)
+    var nextPageUrl: String? = null
+    var nextPublishTime: Long = 0
+    var newestIssueType: String? = null
+    var dialog: Any? = null
+    var issueList: List<IssueListBean>? = null
 
-data class Item(
-		val type: String, //banner2
-		val data: Data,
-		val tag: Any, //null
-		val id: Int, //0
-		val adIndex: Int //-1
-)
+    class IssueListBean {
 
-data class Data(
-		val dataType: String, //Banner
-		val id: Int, //0
-		val title: String,
-		val description: String,
-		val image: String, //http://img.kaiyanapp.com/eef24aa10ab6cf17b5a512943ec22053.jpeg?imageMogr2/quality/60/format/jpg
-		val actionUrl: String,
-		val adTrack: Any, //null
-		val shade: Boolean, //false
-		val label: Any, //null
-		val labelList: Any, //null
-		val header: Any //null
-)
+
+        var releaseTime: Long = 0
+        var type: String? = null
+        var date: Long = 0
+        var publishTime: Long = 0
+        var count: Int = 0
+        var itemList: List<ItemListBean>? = null
+
+        class ItemListBean {
+            /**
+             * type : banner2
+             * data : {"dataType":"Banner","id":0,"title":"","description":"","image":"http://img.kaiyanapp.com/eef24aa10ab6cf17b5a512943ec22053.jpeg?imageMogr2/quality/60/format/jpg","actionUrl":"","adTrack":null,"shade":false,"label":null,"labelList":null,"header":null}
+             * tag : null
+             * id : 0
+             * adIndex : -1
+             */
+
+            var type: String? = null
+            var data: DataBean? = null
+            var tag: Any? = null
+            var id: Int = 0
+            var adIndex: Int = 0
+
+            class DataBean {
+                /**
+                 * dataType : Banner
+                 * id : 0
+                 * title :
+                 * description :
+                 * image : http://img.kaiyanapp.com/eef24aa10ab6cf17b5a512943ec22053.jpeg?imageMogr2/quality/60/format/jpg
+                 * actionUrl :
+                 * adTrack : null
+                 * shade : false
+                 * label : null
+                 * labelList : null
+                 * header : null
+                 */
+
+                var dataType: String? = null
+                var id: Int = 0
+                var title: String? = null
+                var description: String? = null
+                var image: String? = null
+                var actionUrl: String? = null
+                var adTrack: Any? = null
+                var isShade: Boolean = false
+                var label: Any? = null
+                var labelList: Any? = null
+                var header: Any? = null
+                var playUrl:String? = null
+                var cover:CoverBean? = null
+
+                class CoverBean{
+                    var blurred : String? = null
+                    var detail: String? = null
+                    var feed : String? = null
+                    var homepage : String? = null
+                }
+            }
+        }
+    }
+}
