@@ -1,10 +1,11 @@
 package com.zpc.kolin_eyes.bean
 
 /**
- * Created by FLOWER on 2017/12/28.
+ * Created by DELL on 2017/12/28.
  */
 
-class Homeinfo {
+class HomeBean {
+
 
     var nextPageUrl: String? = null
     var nextPublishTime: Long = 0
@@ -14,7 +15,6 @@ class Homeinfo {
 
     class IssueListBean {
 
-
         var releaseTime: Long = 0
         var type: String? = null
         var date: Long = 0
@@ -23,13 +23,6 @@ class Homeinfo {
         var itemList: List<ItemListBean>? = null
 
         class ItemListBean {
-            /**
-             * type : banner2
-             * data : {"dataType":"Banner","id":0,"title":"","description":"","image":"http://img.kaiyanapp.com/eef24aa10ab6cf17b5a512943ec22053.jpeg?imageMogr2/quality/60/format/jpg","actionUrl":"","adTrack":null,"shade":false,"label":null,"labelList":null,"header":null}
-             * tag : null
-             * id : 0
-             * adIndex : -1
-             */
 
             var type: String? = null
             var data: DataBean? = null
@@ -38,19 +31,6 @@ class Homeinfo {
             var adIndex: Int = 0
 
             class DataBean {
-                /**
-                 * dataType : Banner
-                 * id : 0
-                 * title :
-                 * description :
-                 * image : http://img.kaiyanapp.com/eef24aa10ab6cf17b5a512943ec22053.jpeg?imageMogr2/quality/60/format/jpg
-                 * actionUrl :
-                 * adTrack : null
-                 * shade : false
-                 * label : null
-                 * labelList : null
-                 * header : null
-                 */
 
                 var dataType: String? = null
                 var id: Int = 0
