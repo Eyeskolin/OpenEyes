@@ -3,7 +3,6 @@ package com.zpc.kolin_eyes.bean
 /**
  * Created by FLOWER on 2017/12/27.
  */
-class Homeinfo {
 
 data class Homeinfo(
 		val issueList: List<Issue>,
@@ -43,4 +42,3 @@ data class Data(
 		val labelList: Any, //null
 		val header: Any //null
 )
-}

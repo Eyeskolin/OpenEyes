@@ -10,7 +10,7 @@ import java.lang.ref.WeakReference
 /**
  * Created by lenovo on 2017/12/27.
  */
-class FoundPresenter {
+class FoundPresenter (iFoundView: IFoundView){
 
     var model: FoundModel = FoundModel()
     var weakReference: WeakReference<IFoundView>? = null
@@ -27,7 +27,7 @@ class FoundPresenter {
                             view!!.getFoundData(foundbean)
                         }
             }
-            
+
             fun attachView(view: IFoundView) {
                 weakReference = WeakReference(view)
             }
