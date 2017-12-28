@@ -1,6 +1,6 @@
 package com.zpc.kolin_eyes.presenter
 
-import com.zpc.kolin_eyes.bean.FoundBean
+import com.zpc.kolin_eyes.bean.FoudBean
 import com.zpc.kolin_eyes.model.FoundModel
 import com.zpc.kolin_eyes.view.IFoundView
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -12,6 +12,7 @@ import java.lang.ref.WeakReference
  */
 class FoundPresenter (iFoundView: IFoundView){
 
+    var foudView:IFoundView? = iFoundView
     var model: FoundModel = FoundModel()
     var weakReference: WeakReference<IFoundView>? = null
     //得到view
@@ -23,8 +24,8 @@ class FoundPresenter (iFoundView: IFoundView){
                 val flowable = model.getFoundData()
                 flowable.subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
-                        .subscribe{ foundbean : FoundBean ->
-                            view!!.getFoundData(foundbean)
+                        .subscribe { foudBean:List<FoudBean> ->
+                            foudView!!.getFoundData(foudBean)
                         }
             }
 

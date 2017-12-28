@@ -1,7 +1,6 @@
 package com.zpc.kolin_eyes.model
 
-import android.content.Context
-import com.zpc.kolin_eyes.bean.FoundBean
+import com.zpc.kolin_eyes.bean.FoudBean
 import io.reactivex.Flowable
 
 /**
@@ -9,5 +8,5 @@ import io.reactivex.Flowable
  */
 interface IFoundModel {
 
-    fun getFoundData() : Flowable<FoundBean>
+    fun getFoundData() : Flowable<List<FoudBean>>
 }
