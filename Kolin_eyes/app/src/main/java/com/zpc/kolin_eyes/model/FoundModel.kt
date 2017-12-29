@@ -11,7 +11,7 @@ import io.reactivex.Flowable
  */
 class FoundModel : IFoundModel {
     override fun getFoundData():Flowable<List<FoudBean>>{
-        var apiService = RetrofitUtil.getInstance(Apii.BASE_URL).create(ApiService::class.java)
+        var apiService = RetrofitUtil.getInstance().create(ApiService::class.java,Apii.BASE_URL)
         return apiService!!.getString()
     }
 
