@@ -8,5 +8,8 @@ class Apii {
     companion object {
         val BASE_URL = "http://baobab.wandoujia.com/api/v2/"
         val URL="http://baobab.wandoujia.com/api/"
+        val BASE_URL2 = "http://baobab.kaiyanapp.com/api/v3/"
     }
+
+
 }

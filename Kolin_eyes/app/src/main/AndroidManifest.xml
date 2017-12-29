@@ -24,6 +24,7 @@
         <activity android:name=".avtivity.CacheActivity" />
         <activity android:name=".avtivity.HostroyActivity" />
         <activity android:name=".avtivity.FeedBackActivity" />
+        <activity android:name=".avtivity.FoundActivity"></activity>
         <activity android:name=".avtivity.PlayerActivity">
         </activity>
     </application>

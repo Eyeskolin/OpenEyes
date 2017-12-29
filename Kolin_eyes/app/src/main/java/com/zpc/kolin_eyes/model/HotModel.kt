@@ -17,7 +17,7 @@ class HotModel {
     //http://baobab.kaiyanapp.com/api/v3/ranklist?num=10&strategy=%s&udid=26868b32e808498db32fd51fb422d00175e179df&vc=83
     fun getHot(onFinish: OnFinish<HotBean>, mStrategy: String){
         //val apiService = RetrofitUtil.getInstance()?.getApiService(Apii.URL, ApiService::class.java)
-        val apiService = RetrofitUtil.getInstance(Apii.URL).create(ApiService::class.java)
+        val apiService = RetrofitUtil.getInstance().create(ApiService::class.java,Apii.URL)
         val flowable = apiService!!.getHotData(10, mStrategy, "26868b32e808498db32fd51fb422d00175e179df", 83)
         flowable.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
