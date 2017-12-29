@@ -13,8 +13,12 @@ class PlayerActivity : AppCompatActivity() {
         setContentView(R.layout.activity_player)
 
         val playurl = intent.getStringExtra("playurl")
+        val description = intent.getStringExtra("description")
+        val title = intent.getStringExtra("title")
 
-        jiechao_player.setUp(playurl,JZVideoPlayerStandard.SCREEN_WINDOW_NORMAL,"俊贤")
+        jiechao_player.setUp(playurl,JZVideoPlayerStandard.SCREEN_WINDOW_NORMAL,"恩恩")
+        des_player.setText(description)
+        titlt_player.setText(title)
 
     }
 }
