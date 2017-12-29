@@ -3,7 +3,6 @@ package com.zpc.kolin_eyes.fragmnet
 import android.content.Intent
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
-import android.widget.Toast
 import com.bj.kotlinproject.bean.HotBean
 import com.zpc.kolin_eyes.R
 import com.zpc.kolin_eyes.adapter.RankAdapter
@@ -38,13 +37,12 @@ class RankFragment() : BaseFragment<HotPresenter>(), IHotView {
         val list = hotBean.itemList
         var mAdapter = RankAdapter(context, list!!)
         recyclerView.adapter = mAdapter
-        mAdapter.setOniteClickListener(object : RankAdapter.OnItemClickLitener {
+        mAdapter.setOniteCZzlickListener(object : RankAdapter.OnItemClickLitener {
             override fun onItemClick(position: Int) {
                 val playUrl = hotBean.itemList!!.get(position).data!!.playUrl
                 val description = hotBean.itemList!!.get(position).data!!.description
                 val category = hotBean.itemList!!.get(position).data!!.category
                 val title = hotBean.itemList!!.get(position).data!!.title;
-                Toast.makeText(activity,"我点击了"+position, Toast.LENGTH_LONG).show()
 //                val intent = Intent()
 //                intent.setClass(context, PlayerActivity::class.java)
 //                intent.putExtra("playurl",list.get(position))
@@ -52,6 +50,8 @@ class RankFragment() : BaseFragment<HotPresenter>(), IHotView {
                  var intent= Intent()
                  intent.setClass(activity, PlayerActivity::class.java)
                  intent.putExtra("playurl",playUrl)
+                 intent.putExtra("description",description)
+                 intent.putExtra("title",title)
                  startActivity(intent)
             }
 
