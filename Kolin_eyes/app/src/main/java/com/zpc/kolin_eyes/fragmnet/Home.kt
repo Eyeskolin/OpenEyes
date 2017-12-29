@@ -35,7 +35,7 @@ class Home : BaseFragment<HomePrestener>(), HVIew {
             }
 
         }
-        val homeAdapter = HomeAdapter(activity, list)
+        val homeAdapter = HomeAdapter(this!!.activity, list)
         home_rlv.adapter = homeAdapter
     }
 
