@@ -2,7 +2,6 @@ package com.zpc.kolin_eyes.adapter
 
 import android.content.Context
 import android.content.Intent
-import android.support.v4.app.FragmentActivity
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -41,6 +40,8 @@ class HomeAdapter(context: Context,list: ArrayList<ChildHomeinfo>) : RecyclerVie
                 val intent = Intent()
                 intent.setClass(context, PlayerActivity::class.java)
                 intent.putExtra("playurl", list.get(position).playUrl)
+                intent.putExtra("description",list.get(position).description)
+                intent.putExtra("title",list.get(position).title)
                 context.startActivity(intent)
             }
 
