@@ -12,7 +12,7 @@ android {
     }
     defaultConfig {
         applicationId "com.zpc.kolin_eyes"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -53,6 +53,7 @@ dependencies {
     compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
     compile 'com.android.support:recyclerview-v7:26.0.0-alpha1'
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'cn.jzvd:jiaozivideoplayer:6.2.3'
     testCompile 'junit:junit:4.12'
 }
 repositories {
