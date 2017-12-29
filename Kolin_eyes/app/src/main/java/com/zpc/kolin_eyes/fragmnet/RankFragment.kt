@@ -1,5 +1,6 @@
 package com.zpc.kolin_eyes.fragmnet
 
+import android.content.Intent
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import android.widget.Toast
@@ -7,6 +8,7 @@ import com.bj.kotlinproject.bean.HotBean
 import com.zpc.kolin_eyes.R
 import com.zpc.kolin_eyes.adapter.RankAdapter
 import com.zpc.kolin_eyes.avtivity.BaseFragment
+import com.zpc.kolin_eyes.avtivity.PlayerActivity
 import com.zpc.kolin_eyes.presenter.HotPresenter
 import com.zpc.kolin_eyes.view.IHotView
 import kotlinx.android.synthetic.main.rank_fragment.*
@@ -43,14 +45,14 @@ class RankFragment() : BaseFragment<HotPresenter>(), IHotView {
                 val category = hotBean.itemList!!.get(position).data!!.category
                 val title = hotBean.itemList!!.get(position).data!!.title;
                 Toast.makeText(activity,"我点击了"+position, Toast.LENGTH_LONG).show()
-                /* var intent= Intent()
-                 intent.setClass(activity, HotDetailActivity::class.java)
-                 intent.putExtra("playUrl",playUrl)
-                 intent.putExtra("title",title)
-                 intent.putExtra("description",description)
-                 intent.putExtra("category",category)
-                 intent.putExtra("position",position)
-                 startActivity(intent)*/
+//                val intent = Intent()
+//                intent.setClass(context, PlayerActivity::class.java)
+//                intent.putExtra("playurl",list.get(position))
+//                context.startActivity(intent)
+                 var intent= Intent()
+                 intent.setClass(activity, PlayerActivity::class.java)
+                 intent.putExtra("playurl",playUrl)
+                 startActivity(intent)
             }
 
         })

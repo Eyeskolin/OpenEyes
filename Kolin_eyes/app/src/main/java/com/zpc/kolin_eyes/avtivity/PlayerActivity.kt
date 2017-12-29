@@ -2,6 +2,7 @@ package com.zpc.kolin_eyes.avtivity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import cn.jzvd.JZVideoPlayerStandard
 import com.zpc.kolin_eyes.R
 import kotlinx.android.synthetic.main.activity_player.*
@@ -13,6 +14,7 @@ class PlayerActivity : AppCompatActivity() {
         setContentView(R.layout.activity_player)
 
         val playurl = intent.getStringExtra("playurl")
+        Log.i("xxx","播放地址"+playurl)
 
         jiechao_player.setUp(playurl,JZVideoPlayerStandard.SCREEN_WINDOW_NORMAL,"俊贤")
 
