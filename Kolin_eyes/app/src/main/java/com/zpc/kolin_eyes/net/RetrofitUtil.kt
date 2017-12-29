@@ -5,22 +5,27 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
 /**
  * Created by DELL on 2017/12/27.
  */
 class RetrofitUtil constructor(baseurl : String){
 
-    var murl:String = baseurl;
-    var okhttpclient:OkHttpClient? = null;
-    var retrofit:Retrofit? = null;
+    var murl:String = baseurl
+    var okhttpclient:OkHttpClient? = null
+    var retrofit:Retrofit? = null
+    val DEFAULT_TIMEOUT : Long = 20
     init {
         //创建okhttp
         okhttpclient = OkHttpClient.Builder()
                 .addNetworkInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+                .connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
+                .writeTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
                 .build()
         //创建Retrofit
         retrofit = Retrofit.Builder()
+                .client(okhttpclient)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .baseUrl(murl)
