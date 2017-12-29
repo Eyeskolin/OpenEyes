@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.zpc.kolin_eyes.avtivity.PlayerActivity">
+
+    <cn.jzvd.JZVideoPlayerStandard
+        android:id="@+id/jiechao_player"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"></cn.jzvd.JZVideoPlayerStandard>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/titlt_player"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/des_player"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

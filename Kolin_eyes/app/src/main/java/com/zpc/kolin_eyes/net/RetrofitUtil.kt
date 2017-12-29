@@ -10,12 +10,12 @@ import java.util.concurrent.TimeUnit
 /**
  * Created by DELL on 2017/12/27.
  */
-class RetrofitUtil constructor(baseurl : String){
+class RetrofitUtil constructor(){
 
-    var murl:String = baseurl
     var okhttpclient:OkHttpClient? = null
     var retrofit:Retrofit? = null
     val DEFAULT_TIMEOUT : Long = 20
+
     init {
         //创建okhttp
         okhttpclient = OkHttpClient.Builder()
@@ -23,29 +23,29 @@ class RetrofitUtil constructor(baseurl : String){
                 .connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
                 .writeTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
                 .build()
+
+    }
+    companion object {
+        var retrofitutil : RetrofitUtil? = null
+        fun getInstance():RetrofitUtil{
+            if (retrofitutil == null) {
+                synchronized(RetrofitUtil::class){
+                    if (retrofitutil == null){
+                        retrofitutil = RetrofitUtil()
+                    }
+                }
+            }
+            return retrofitutil!!
+        }
+    }
+    fun <T> create(service:Class<T>?,baseurl:String):T?{
         //创建Retrofit
         retrofit = Retrofit.Builder()
                 .client(okhttpclient)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .baseUrl(murl)
+                .baseUrl(baseurl)
                 .build()
-    }
-    companion object {
-        @Volatile
-        var instance : RetrofitUtil? = null
-        fun getInstance(baseurl: String):RetrofitUtil{
-            if (instance == null) {
-                synchronized(RetrofitUtil::class){
-                    if (instance == null){
-                        instance = RetrofitUtil(baseurl)
-                    }
-                }
-            }
-            return instance!!
-        }
-    }
-    fun <T> create(service:Class<T>?):T?{
         if (service == null){
             throw RuntimeException("Api service is null!")
         }

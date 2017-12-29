@@ -11,8 +11,8 @@ import io.reactivex.Flowable
  */
 class HomeModel {
     fun getData():Flowable<HomeBean>{
-        val retrofitUtil = RetrofitUtil.getInstance(Apii.BASE_URL)
-        val service = retrofitUtil.create(ApiService::class.java)
+        val retrofitUtil = RetrofitUtil.getInstance()
+        val service = retrofitUtil.create(ApiService::class.java,Apii.BASE_URL)
         val flowable = service!!.gethomeinfo()
         return flowable
     }

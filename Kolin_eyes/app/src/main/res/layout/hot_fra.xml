@@ -2,6 +2,43 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f00fff">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#ffffff">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ranking"
+            android:textSize="26dp"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:src="@mipmap/icon_search" />
+    </RelativeLayout>
+    <com.astuetz.PagerSlidingTabStrip
+        android:id="@+id/tabs_hot"
+        android:layout_width="match_parent"
+        android:layout_height="48dip"
+        app:pstsShouldExpand="true"
+        app:pstsIndicatorColor ="#000000"
+        />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_hot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tabs_hot"
+        >
+    </android.support.v4.view.ViewPager>
 </LinearLayout>
