@@ -2,7 +2,6 @@ package com.zpc.kolin_eyes.fragmnet
 
 import android.util.Log
 import android.view.View
-import android.view.ViewGroup
 import com.zpc.kolin_eyes.R
 import com.zpc.kolin_eyes.avtivity.BaseFragment
 import com.zpc.kolin_eyes.bean.FoundBean
@@ -14,7 +13,7 @@ import com.zpc.kolin_eyes.view.IFoundView
  */
 class Found:BaseFragment<FoundPresenter>() , IFoundView  {
     override fun getFoundData(found: FoundBean) {
-        Log.i("ddd" , found.bgColor.toString())
+        Log.i("ddd" , found.name)
     }
 
     override fun getLayoutId(): Int {

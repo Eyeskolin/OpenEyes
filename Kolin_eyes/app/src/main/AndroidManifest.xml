@@ -21,7 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".avtivity.SettingActivity"></activity>
+        <activity android:name=".avtivity.SettingActivity" />
+        <activity android:name=".avtivity.CacheActivity" />
+        <activity android:name=".avtivity.HostroyActivity" />
+        <activity android:name=".avtivity.FeedBackActivity"></activity>
     </application>
 
 </manifest>

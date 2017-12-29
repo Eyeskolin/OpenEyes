@@ -28,14 +28,17 @@
             android:src="@mipmap/icon_search" />
     </RelativeLayout>
     <com.astuetz.PagerSlidingTabStrip
-        android:id="@+id/tabs"
+        android:id="@+id/tabs_hot"
         android:layout_width="match_parent"
         android:layout_height="48dip"
+        app:pstsShouldExpand="true"
         app:pstsIndicatorColor ="#000000"
         />
     <android.support.v4.view.ViewPager
-        android:id="@+id/vp"
+        android:id="@+id/vp_hot"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@id/tabs_hot"
+        >
     </android.support.v4.view.ViewPager>
 </LinearLayout>
