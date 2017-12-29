@@ -55,7 +55,7 @@ class RankAdapter(context: Context, list: List<HotBean.ItemListBean>) : Recycler
         fun onItemClick(position : Int)
     }
     var litener:OnItemClickLitener? =null
-    fun setOniteClickListener(litener : OnItemClickLitener ){
+    fun setOniteCZzlickListener(litener : OnItemClickLitener ){
         this.litener=litener
     }
 }
